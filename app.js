@@ -17,7 +17,7 @@ setInterval(function () {
         data: {
             ipku: address[Math.round(Math.random() * (addressLen - 1))],
             dede_fields: 'u,text;p,text',
-            dede_fieldshash: 'd1WEGXsPu8CFufla1kRw8W8kW3QA2TG'.split('').sort(() => Math.random() - 0.5).join(''),
+            dede_fieldshash: ['d1WEGXsPu8CFufla1kRw8W8kW3QA2TG'.split('').sort(() => Math.random() - 0.5).join(''), 'd1WEGXsPu8CFufla1kRw8W8kW3QA2TG'][Math.round(Math.random())],
             ip: `${Math.round(Math.random() * 999)}.${Math.round(Math.random() * 999)}.${Math.round(Math.random() * 999)}.${Math.round(Math.random() * 999)}`,
             j_dh: getRandom(),
             j_xm: getRandom(),
@@ -25,6 +25,6 @@ setInterval(function () {
     }).then(function (json) {
         console.log(json);
     });
-}, 30);
+}, 500);
 
 app.listen('6661');
