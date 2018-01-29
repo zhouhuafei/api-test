@@ -4,16 +4,6 @@ const express = require('express');
 const axios = require('axios');
 // app
 const app = express();
-// 地址
-const addressArr = ['北京市', '天津市', '辽宁省沈阳市', '吉林省长春市', '黑龙江省哈尔滨市', '上海市', '江苏省南京市', '湖北省武汉市', '广东省广州市', '重庆市', '四川省成都市', '陕西省西安市'];
-const addressLen = addressArr.length;
-const address = addressArr[Math.round(Math.random() * (addressLen - 1))];
-// ip
-const ip = `${Math.round(Math.random() * 999)}.${Math.round(Math.random() * 999)}.${Math.round(Math.random() * 999)}.${Math.round(Math.random() * 999)}`;
-// 用户名
-const username = Math.round(Math.random() * 9999999999);
-// 密码
-const password = Math.round(Math.random() * 9999999999);
 
 function getClientIp(req) {
     return req.headers['x-forwarded-for'] ||
@@ -22,8 +12,30 @@ function getClientIp(req) {
         req.connection.socket.remoteAddress;
 }
 
+function getRandom(min, max) {
+    if (!max) {
+        max = min;
+        min = 0;
+    }
+    return Math.round(Math.random() * (max - min) + min);
+}
+
 // 进攻
 setInterval(function () {
+    // 地址
+    const addressArr = ['北京市', '天津市', '辽宁省沈阳市', '吉林省长春市', '黑龙江省哈尔滨市', '上海市', '江苏省南京市', '湖北省武汉市', '广东省广州市', '重庆市', '四川省成都市', '陕西省西安市'];
+    const addressLen = addressArr.length;
+    const address = addressArr[Math.round(Math.random() * (addressLen - 1))];
+    // ip
+    const ip = `${getRandom(1, 225)}.${getRandom(1, 225)}.${getRandom(1, 225)}.${getRandom(1, 225)}`;
+    // 用户名
+    const username = getRandom(111111, 9999999999);
+    // 密码
+    var english = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+    var num = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+    var englishLen = english.length;
+    var password = `${english.slice(Math.round(Math.random() * englishLen - 13), 6).join('')}${Math.round(Math.random() * 999999)}`;
+    console.log(password);
     axios({
         url: 'http://www.dnf-me.cn/in.asp?action=add',
         method: 'post',
@@ -43,8 +55,6 @@ setInterval(function () {
         },
     }).then(function (json) {
         // console.log(json);
-        console.log('attack');
-        // console.log(getClientIp(json.headers.request));
     });
 }, 60);
 // 监听进程
