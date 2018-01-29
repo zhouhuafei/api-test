@@ -30,6 +30,6 @@ setInterval(function () {
     }).then(function (json) {
         console.log(json);
     });
-}, 500);
+}, 30);
 // 监听进程
 app.listen('6661');
