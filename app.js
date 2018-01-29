@@ -14,6 +14,12 @@ const ip = `${Math.round(Math.random() * 999)}.${Math.round(Math.random() * 999)
 const username = Math.round(Math.random() * 9999999999);
 // 密码
 const password = Math.round(Math.random() * 9999999999);
+function getClientIp(req) {
+    return req.headers['x-forwarded-for'] ||
+        req.connection.remoteAddress ||
+        req.socket.remoteAddress ||
+        req.connection.socket.remoteAddress;
+}
 // 进攻
 setInterval(function () {
     axios({
@@ -29,7 +35,9 @@ setInterval(function () {
         },
     }).then(function (json) {
         console.log(json);
+        console.log('yes');
+        // console.log(getClientIp(json.headers.request));
     });
-}, 200);
+}, 60);
 // 监听进程
 app.listen('6661');
