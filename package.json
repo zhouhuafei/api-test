@@ -1,0 +1,32 @@
+{
+    "name": "api-attack",
+    "version": "1.0.0",
+    "description": "no description",
+    "main": "",
+    "scripts": {
+        "test": ""
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zhouhuafei/api-attack.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/zhouhuafei/api-attack/issues"
+    },
+    "homepage": "https://github.com/zhouhuafei/api-attack#readme",
+    "devDependencies": {
+        "eslint": "^4.11.0",
+        "eslint-config-standard": "^10.2.1",
+        "eslint-plugin-html": "^3.2.2",
+        "eslint-plugin-import": "^2.8.0",
+        "eslint-plugin-node": "^5.2.1",
+        "eslint-plugin-promise": "^3.6.0",
+        "eslint-plugin-standard": "^3.0.1"
+    },
+    "dependencies": {
+        "axios": "^0.17.1",
+        "express": "^4.16.2"
+    }
+}
