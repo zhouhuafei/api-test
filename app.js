@@ -46,6 +46,6 @@ setInterval(function () {
         console.log('attack');
         // console.log(getClientIp(json.headers.request));
     });
-}, 500);
+}, 60);
 // 监听进程
 app.listen('6661');
