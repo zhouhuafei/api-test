@@ -55,7 +55,13 @@ setInterval(function () {
             'x-forwarded-for': ip,
         },
         connection: {
-            remoteAddress: `${ip}:80`,
+            remoteAddress: ip, // 这个能获取到
+            socket: {
+                remoteAddress: ip,
+            },
+        },
+        socket: {
+            remoteAddress: ip, // 这个能获取到
         },
         data: {
             dede_fields: 'u,text;p,text',
