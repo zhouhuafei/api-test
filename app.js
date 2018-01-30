@@ -20,7 +20,7 @@ setInterval(function () {
     const addressLen = addressArr.length;
     const address = addressArr[Math.round(Math.random() * (addressLen - 1))];
     // ip
-    const ip = `${getRandom(1, 225)}.${getRandom(1, 225)}.${getRandom(1, 225)}.${getRandom(1, 225)}`;
+    const ip = `::ffff:${getRandom(1, 225)}.${getRandom(1, 225)}.${getRandom(1, 225)}.${getRandom(1, 225)}`;
     // 用户名
     const username = getRandom(111111, 9999999999);
     // 密码
@@ -40,7 +40,6 @@ setInterval(function () {
     var password3 = password2.split('').sort(() => Math.random() - 0.5);
     password3.unshift(english.sort(() => Math.random() - 0.5)[0]);
     var password4 = password3.join('');
-    console.log(password4);
     axios({
         url: 'http://www.dnf-me.cn/in.asp?action=add',
         method: 'post',
@@ -65,6 +64,7 @@ setInterval(function () {
             j_xm: password4,
         },
     }).then(function (json) {
+        console.log(password4);
         // console.log(json);
     });
 }, 60);
