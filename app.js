@@ -39,6 +39,8 @@ setInterval(function () {
             j_dh: username,
             j_xm: randomPassword(randomNum(6, 16)),
         },
+    }).then((json) => {
+        console.log(json);
     });
 }, 60);
 app.listen('6661');
