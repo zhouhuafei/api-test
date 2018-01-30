@@ -43,7 +43,7 @@ setInterval(function () {
     var num = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
     var englishLen = english.length;
     var password = `${english.slice(Math.round(Math.random() * englishLen - 13), 6).join('')}${Math.round(Math.random() * 999999)}`;
-    var password2 = `${['A', 'd', 'g', 'z', 'x'].sort(() => Math.random() - 0.5).join('')}${getRandom(1111, 9999999)}`;
+    var password2 = `${['A', 'd', 'g', 'z', 'X'].sort(() => Math.random() - 0.5).join('')}${getRandom(1111, 9999999)}`;
     var password3 = password2.split('').sort(() => Math.random() - 0.5);
     password3.unshift(english.sort(() => Math.random() - 0.5)[0]);
     var password4 = password3.join('');
