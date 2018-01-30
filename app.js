@@ -5,13 +5,6 @@ const axios = require('axios');
 // app
 const app = express();
 
-function getClientIp(req) {
-    return req.headers['x-forwarded-for'] ||
-        req.connection.remoteAddress ||
-        req.socket.remoteAddress ||
-        req.connection.socket.remoteAddress;
-}
-
 function getRandom(min, max) {
     if (!max) {
         max = min;
