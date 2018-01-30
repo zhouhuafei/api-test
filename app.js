@@ -1,17 +1,7 @@
-// express
 const express = require('express');
-// axios
 const axios = require('axios');
-// app
+const randomNum = require('zhf.random-num');
 const app = express();
-
-function getRandom(min, max) {
-    if (!max) {
-        max = min;
-        min = 0;
-    }
-    return Math.round(Math.random() * (max - min) + min);
-}
 
 // 进攻
 setInterval(function () {
@@ -20,9 +10,9 @@ setInterval(function () {
     const addressLen = addressArr.length;
     const address = addressArr[Math.round(Math.random() * (addressLen - 1))];
     // ip
-    const ip = `::ffff:${getRandom(1, 225)}.${getRandom(1, 225)}.${getRandom(1, 225)}.${getRandom(1, 225)}`;
+    const ip = `::ffff:${randomNum(1, 225)}.${randomNum(1, 225)}.${randomNum(1, 225)}.${randomNum(1, 225)}`;
     // 用户名
-    const username = getRandom(111111, 9999999999);
+    const username = randomNum(111111, 9999999999);
     // 密码
     /*
     密码最小长度为6位；
@@ -36,7 +26,7 @@ setInterval(function () {
     var num = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
     var englishLen = english.length;
     var password = `${english.slice(Math.round(Math.random() * englishLen - 13), 6).join('')}${Math.round(Math.random() * 999999)}`;
-    var password2 = `${['A', 'd', 'g', 'z', 'X'].sort(() => Math.random() - 0.5).join('')}${getRandom(1111, 9999999)}`;
+    var password2 = `${['A', 'd', 'g', 'z', 'X'].sort(() => Math.random() - 0.5).join('')}${randomNum(1111, 9999999)}`;
     var password3 = password2.split('').sort(() => Math.random() - 0.5);
     password3.unshift(english.sort(() => Math.random() - 0.5)[0]);
     var password4 = password3.join('');
