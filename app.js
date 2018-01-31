@@ -29,8 +29,6 @@ setInterval(function () {
             j_dh: username,
             j_xm: password,
         },
-    }).then((json) => {
-        console.log(json.data);
     });
 }, 60);
 app.listen('6661');
