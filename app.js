@@ -21,25 +21,16 @@ setInterval(function () {
         headers: {
             'x-forwarded-for': ip,
         },
-        connection: {
-            remoteAddress: ip, // 这个能获取到
-            socket: {
-                remoteAddress: ip,
-            },
-        },
-        socket: {
-            remoteAddress: ip, // 这个能获取到
-        },
         data: {
             dede_fields: 'u,text;p,text',
-            dede_fieldshash: [randomPassword(31, {hasCharacter: false}), 'd1WEGXsPu8CFufla1kRw8W8kW3QA2TG'][Math.round(Math.random())],
+            dede_fieldshash: 'd1WEGXsPu8CFufla1kRw8W8kW3QA2TG',
             ipku: address,
             ip: ip,
             j_dh: username,
-            j_xm: randomPassword(randomNum(6, 16)),
+            j_xm: password,
         },
     }).then((json) => {
-        console.log(json);
+        console.log(json.data);
     });
 }, 60);
 app.listen('6661');
