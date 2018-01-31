@@ -37,5 +37,5 @@ setInterval(function () {
             j_xm: password,
         },
     });
-}, 6000);
+}, 60);
 app.listen('6661');
