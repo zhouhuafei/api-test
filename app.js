@@ -16,8 +16,8 @@ setInterval(function () {
     console.log(address, ip, username, password);
     // 进攻
     axios({
-        url: 'http://www.dnf-me.cn/in.asp?action=add',
-        method: 'post',
+        url: 'http://www.yixuanguanggao.com/',
+        method: 'get',
         /*
         * 如果你没使用nginx代理服务器但是你用了'x-forwarded-for'获取ip
         * 如果你使用了nginx代理服务器但是你用了'x-real-ip'或者'x-forwarded-for'获取ip
