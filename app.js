@@ -16,7 +16,7 @@ setInterval(function () {
     console.log(address, ip, username, password);
     // 进攻
     axios({
-        url: 'http://www.yixuanguanggao.com/',
+        url: '',
         method: 'get',
         /*
         * 如果你没使用nginx代理服务器但是你用了'x-forwarded-for'获取ip
