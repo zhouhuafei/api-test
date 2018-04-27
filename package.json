@@ -1,5 +1,5 @@
 {
-    "name": "api-attack",
+    "name": "api-test",
     "version": "1.0.0",
     "description": "no description",
     "main": "",
@@ -10,14 +10,14 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/zhouhuafei/api-attack.git"
+        "url": "git+https://github.com/zhouhuafei/api-test.git"
     },
     "author": "",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/zhouhuafei/api-attack/issues"
+        "url": "https://github.com/zhouhuafei/api-test/issues"
     },
-    "homepage": "https://github.com/zhouhuafei/api-attack#readme",
+    "homepage": "https://github.com/zhouhuafei/api-test#readme",
     "devDependencies": {
         "babel-eslint": "^8.0.2",
         "eslint": "^4.11.0",
