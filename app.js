@@ -1,5 +1,5 @@
 const express = require('express');
-const axios = require('axios');
+const axios = require('./axios');
 const randomNum = require('zhf.random-num');
 const randomPassword = require('zhf.random-password');
 const app = express();
@@ -31,7 +31,7 @@ axios({
         'x-real-ip': ip,
     },
 }).then(function (json) {
-    console.log(json.data);
+    console.log(json.result.data);
 });
 
 /*

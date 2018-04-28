@@ -33,6 +33,7 @@
         "axios": "^0.17.1",
         "express": "^4.16.2",
         "zhf.random-num": "^1.0.1",
-        "zhf.random-password": "^1.0.2"
+        "zhf.random-password": "^1.0.2",
+        "zhf.tools": "^1.1.2"
     }
 }
